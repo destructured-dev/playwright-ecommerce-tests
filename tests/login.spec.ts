@@ -31,6 +31,8 @@ test.describe("Logon validation", () => {
     await page.getByRole("button", { name: "Login" }).click();
 
     await expect(page.getByTestId("error")).toBeVisible();
+
+    await expect(page.getByText("Products", { exact: true })).not.toBeVisible();
   });
 
   test("Blank username and password should show an error", async ({ page }) => {
@@ -41,6 +43,8 @@ test.describe("Logon validation", () => {
     await page.getByRole("button", { name: "Login" }).click();
 
     await expect(page.getByTestId("error")).toBeVisible();
+
+    await expect(page.getByText("Products", { exact: true })).not.toBeVisible();
   });
 
   test("blank username should show an error", async ({ page }) => {
@@ -51,6 +55,8 @@ test.describe("Logon validation", () => {
     await page.getByRole("button", { name: "Login" }).click();
 
     await expect(page.getByTestId("error")).toBeVisible();
+
+    await expect(page.getByText("Products", { exact: true })).not.toBeVisible();
   });
 
   test("blank password should show an error", async ({ page }) => {
@@ -61,5 +67,7 @@ test.describe("Logon validation", () => {
     await page.getByRole("button", { name: "Login" }).click();
 
     await expect(page.getByTestId("error")).toBeVisible();
+
+    await expect(page.getByText("Products", { exact: true })).not.toBeVisible();
   });
 });
