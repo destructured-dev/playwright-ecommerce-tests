@@ -13,7 +13,9 @@ test.describe("Logon validation", () => {
     await expect(page.getByRole("button", { name: "Login " })).toBeVisible();
   });
 
-  test("standard user can login", async ({ page }) => {
+  test("standard user can login and access the product page", async ({
+    page,
+  }) => {
     await page.getByPlaceholder("Username").fill("standard_user");
 
     await page.getByPlaceholder("Password").fill("secret_sauce");
@@ -23,7 +25,9 @@ test.describe("Logon validation", () => {
     await expect(page.getByText("Products", { exact: true })).toBeVisible();
   });
 
-  test("invalid creditials should show an error", async ({ page }) => {
+  test("invalid creditials should show an error and remain on the login page", async ({
+    page,
+  }) => {
     await page.getByPlaceholder("Username").fill("invalid_user");
 
     await page.getByPlaceholder("Password").fill("secret_sauce");
@@ -35,7 +39,9 @@ test.describe("Logon validation", () => {
     await expect(page.getByText("Products", { exact: true })).not.toBeVisible();
   });
 
-  test("Blank username and password should show an error", async ({ page }) => {
+  test("Blank username and password should show an error and remain on the login page", async ({
+    page,
+  }) => {
     await page.getByPlaceholder("Username").clear();
 
     await page.getByPlaceholder("Password").clear();
@@ -47,7 +53,9 @@ test.describe("Logon validation", () => {
     await expect(page.getByText("Products", { exact: true })).not.toBeVisible();
   });
 
-  test("blank username should show an error", async ({ page }) => {
+  test("blank username should show an error and remain on the login page", async ({
+    page,
+  }) => {
     await page.getByPlaceholder("Username").fill("standard_user");
 
     await page.getByPlaceholder("Password").clear();
@@ -59,7 +67,9 @@ test.describe("Logon validation", () => {
     await expect(page.getByText("Products", { exact: true })).not.toBeVisible();
   });
 
-  test("blank password should show an error", async ({ page }) => {
+  test("blank password should show an error and remain on the login page", async ({
+    page,
+  }) => {
     await page.getByPlaceholder("Username").clear();
 
     await page.getByPlaceholder("Password").fill("special_sauce");
