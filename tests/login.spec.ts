@@ -1,4 +1,4 @@
-import { test, expect, defineConfig } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 
 test.describe("Logon validation", () => {
   test.beforeEach(async ({ page }) => {
