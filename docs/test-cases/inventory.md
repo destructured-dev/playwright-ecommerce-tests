@@ -37,13 +37,13 @@
 
 ## TC-INV-002 — Sort products by name ascending
 
-| Field             | Details                                          |
-| ----------------- | ------------------------------------------------ |
-| Priority          | Medium                                           |
-| Type              | Functional UI                                    |
-| Automation status | Automated                                        |
-| Preconditions     | User is logged in and the inventory page is open |
-| Test data         | All displayed products                           |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
@@ -67,13 +67,13 @@
 
 ## TC-INV-003 — Add a product to the shopping cart
 
-| Field             | Details                                 |
-| ----------------- | --------------------------------------- |
-| Priority          | High                                    |
-| Type              | Functional UI                           |
-| Automation status | Automated                               |
-| Preconditions     | User is logged in and the cart is empty |
-| Test data         | Sauce Labs Backpack                     |
+| Field             | Details                                                    |
+| ----------------- | ---------------------------------------------------------- |
+| Priority          | High                                                       |
+| Type              | Functional UI                                              |
+| Automation status | Automated                                                  |
+| Preconditions     | User is logged in as `standard_user` and the cart is empty |
+| Test data         | Sauce Labs Backpack                                        |
 
 ### Steps
 
@@ -97,13 +97,13 @@
 
 ## TC-INV-004 — Sort products by price ascending
 
-| Field             | Details                                          |
-| ----------------- | ------------------------------------------------ |
-| Priority          | Medium                                           |
-| Type              | Functional UI                                    |
-| Automation status | Not automated                                    |
-| Preconditions     | User is logged in and the inventory page is open |
-| Test data         | All displayed products                           |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
@@ -125,13 +125,13 @@
 
 ## TC-INV-005 — Remove a product from the cart
 
-| Field             | Details                                                                   |
-| ----------------- | ------------------------------------------------------------------------- |
-| Priority          | Medium                                                                    |
-| Type              | Functional UI                                                             |
-| Automation status | Not automated                                                             |
-| Preconditions     | User is logged, the inventory page is open and one product is in the cart |
-| Test data         | All displayed products                                                    |
+| Field             | Details                                                             |
+| ----------------- | ------------------------------------------------------------------- |
+| Priority          | Medium                                                              |
+| Type              | Functional UI                                                       |
+| Automation status | Automated                                                           |
+| Preconditions     | User is logged in as `standard_user` and one product is in the cart |
+| Test data         | All displayed products                                              |
 
 ### Steps
 
@@ -154,13 +154,13 @@
 
 ## TC-INV-006 — Open a product detail page
 
-| Field             | Details                                          |
-| ----------------- | ------------------------------------------------ |
-| Priority          | Medium                                           |
-| Type              | Functional UI                                    |
-| Automation status | Not automated                                    |
-| Preconditions     | User is logged in and the inventory page is open |
-| Test data         | All displayed products                           |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
@@ -182,13 +182,13 @@
 
 ## TC-INV-007 — Sort products by names Z to A
 
-| Field             | Details                                          |
-| ----------------- | ------------------------------------------------ |
-| Priority          | Medium                                           |
-| Type              | Functional UI                                    |
-| Automation status | Not automated                                    |
-| Preconditions     | User is logged in and the inventory page is open |
-| Test data         | All displayed products                           |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
@@ -210,13 +210,13 @@
 
 ## TC-INV-008 — Sort prices high to low
 
-| Field             | Details                                          |
-| ----------------- | ------------------------------------------------ |
-| Priority          | Medium                                           |
-| Type              | Functional UI                                    |
-| Automation status | Not automated                                    |
-| Preconditions     | User is logged in and the inventory page is open |
-| Test data         | All displayed products                           |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
@@ -238,13 +238,13 @@
 
 ## TC-INV-009 — Add multiple products
 
-| Field             | Details                                                  |
-| ----------------- | -------------------------------------------------------- |
-| Priority          | Medium                                                   |
-| Type              | Functional UI                                            |
-| Automation status | Not automated                                            |
-| Preconditions     | User is logged in and the product inventory page is open |
-| Test data         | All displayed products                                   |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
@@ -273,13 +273,13 @@
 
 ## TC-INV-010 — Add and remove different products
 
-| Field             | Details                                                                |
-| ----------------- | ---------------------------------------------------------------------- |
-| Priority          | Medium                                                                 |
-| Type              | Functional UI                                                          |
-| Automation status | Not automated                                                          |
-| Preconditions     | User is logged in, product page displayed and no products are in cart. |
-| Test data         | All displayed products                                                 |
+| Field             | Details                                                           |
+| ----------------- | ----------------------------------------------------------------- |
+| Priority          | Medium                                                            |
+| Type              | Functional UI                                                     |
+| Automation status | Automated                                                         |
+| Preconditions     | User is logged in as `standard_user` and no products are in cart. |
+| Test data         | All displayed products                                            |
 
 ### Steps
 
@@ -303,13 +303,13 @@
 
 ## TC-INV-011 — Open the shopping cart
 
-| Field             | Details                                           |
-| ----------------- | ------------------------------------------------- |
-| Priority          | Medium                                            |
-| Type              | Functional UI                                     |
-| Automation status | Not automated                                     |
-| Preconditions     | User is logged in and the product page is visible |
-| Test data         | All displayed products                            |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
@@ -328,13 +328,13 @@
 
 ## TC-INV-012 — Return from product details
 
-| Field             | Details                                                      |
-| ----------------- | ------------------------------------------------------------ |
-| Priority          | Medium                                                       |
-| Type              | Functional UI                                                |
-| Automation status | Not automated                                                |
-| Preconditions     | User is logged in and the product inventory page is visible. |
-| Test data         | All displayed products                                       |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
@@ -355,13 +355,13 @@
 
 ## TC-INV-013 — Open and close the navigation menu
 
-| Field             | Details                                                 |
-| ----------------- | ------------------------------------------------------- |
-| Priority          | Medium                                                  |
-| Type              | Functional UI                                           |
-| Automation status | Not automated                                           |
-| Preconditions     | User is logged in and product inventory page is visible |
-| Test data         | All displayed products                                  |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
@@ -383,13 +383,13 @@
 
 ## TC-INV-014 — Selecting Logout returns the user to the login page.
 
-| Field             | Details                |
-| ----------------- | ---------------------- |
-| Priority          | Medium                 |
-| Type              | Functional UI          |
-| Automation status | Not automated          |
-| Preconditions     | The user is logged in. |
-| Test data         | All displayed products |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
@@ -414,13 +414,13 @@
 
 ## TC-INV-015 — Product images load
 
-| Field             | Details                                                     |
-| ----------------- | ----------------------------------------------------------- |
-| Priority          | Medium                                                      |
-| Type              | Functional UI                                               |
-| Automation status | Not automated                                               |
-| Preconditions     | User is logged in and the product inventory page is visible |
-| Test data         | All displayed products                                      |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
@@ -440,13 +440,13 @@
 
 ## TC-INV-016 — Name
 
-| Field             | Details                                                     |
-| ----------------- | ----------------------------------------------------------- |
-| Priority          | Medium                                                      |
-| Type              | Functional UI                                               |
-| Automation status | Not automated                                               |
-| Preconditions     | User is logged in and the product inventory page is visible |
-| Test data         | All displayed products                                      |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
@@ -476,13 +476,13 @@
 
 ## TC-INV-017 — Prices use the correct format
 
-| Field             | Details                                                     |
-| ----------------- | ----------------------------------------------------------- |
-| Priority          | Medium                                                      |
-| Type              | Functional UI                                               |
-| Automation status | Not automated                                               |
-| Preconditions     | User is logged in and the product inventory page is visible |
-| Test data         | All displayed products                                      |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
@@ -505,13 +505,13 @@
 
 ## TC-INV-018 — Product page layout is correct for viewport
 
-| Field             | Details                                                     |
-| ----------------- | ----------------------------------------------------------- |
-| Priority          | Medium                                                      |
-| Type              | Functional UI                                               |
-| Automation status | Not automated                                               |
-| Preconditions     | User is logged in and the product inventory page is visible |
-| Test data         | All displayed products                                      |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
@@ -532,13 +532,13 @@
 
 ## TC-INV-019 — UI can be used via keyboard
 
-| Field             | Details                                                     |
-| ----------------- | ----------------------------------------------------------- |
-| Priority          | Medium                                                      |
-| Type              | Functional UI                                               |
-| Automation status | Not automated                                               |
-| Preconditions     | User is logged in and the product inventory page is visible |
-| Test data         | All displayed products                                      |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
@@ -560,13 +560,13 @@
 
 ## TC-INV-020 — Refreshing the page doesn't cause errors
 
-| Field             | Details                                                         |
-| ----------------- | --------------------------------------------------------------- |
-| Priority          | Medium                                                          |
-| Type              | Functional UI                                                   |
-| Automation status | Not automated                                                   |
-| Preconditions     | The user is logged in and the product inventory page is visible |
-| Test data         | All displayed products                                          |
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
 
 ### Steps
 
