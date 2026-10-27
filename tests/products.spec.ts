@@ -53,5 +53,43 @@ test.describe("Logon validation", () => {
     expect(sortedInventoryNames).toEqual(inventoryNames);
 
     // Check that all items are visible after the sort
+    const inventoryItems = await page.getByTestId("inventory-item").all();
+    for (const item of inventoryItems) {
+      const titleElement = item.getByTestId("inventory-item-name");
+      const imgElement = item.getByRole("img");
+      const descriptionElement = item.getByTestId("inventory-item-desc");
+      const priceElement = item.getByTestId("inventory-item-price");
+      const buttonElement = item.getByRole("button", { name: "Add to cart" });
+
+      await expect(titleElement).toBeVisible();
+      await expect(imgElement).toBeVisible();
+      await expect(descriptionElement).toBeVisible();
+      await expect(priceElement).toBeVisible();
+      await expect(buttonElement).toBeVisible();
+    }
+  });
+
+  test("TC-INV-003 Add a product to the shopping cart", async ({ page }) => {
+    // Add the backpack to the cart
+    await page.getByTestId("add-to-cart-sauce-labs-backpack").click();
+
+    // Check that the cart icon shows 1 product
+    await expect(page.getByTestId("shopping-cart-badge")).toContainText("1");
+
+    // Check that the backpack product is still visible
+
+    await expect(
+      page
+        .getByTestId("inventory-item-name")
+        .filter({ hasText: "Sauce Labs Backpack" }),
+    ).toBeVisible();
+  });
+
+  test("TC-INV-004 Sort products by price ascending", async ({ page }) => {
+    await page
+      .getByTestId("product-sort-container")
+      .selectOption({ value: "lohi" });
+
+    const inventoryItems = await page.getByTestId("inventory-item").all();
   });
 });
