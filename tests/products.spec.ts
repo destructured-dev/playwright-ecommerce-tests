@@ -85,6 +85,11 @@ test.describe("Logon validation", () => {
     ).toBeVisible();
   });
 
+  //------------------------------------------------------------
+  // TODO
+  // This fails in webkit - unsorted prices is creating an empty array
+  //------------------------------------------------------------
+
   test("TC-INV-004 Sort products by price ascending", async ({ page }) => {
     // get the prices of inventory items before sorting
     const unsortedPrices = await page
@@ -129,11 +134,6 @@ test.describe("Logon validation", () => {
       await expect(buttonElement).toBeVisible();
     }
   });
-
-  //------------------------------------------------------------
-  // TODO
-  // This fails in webkit
-  //------------------------------------------------------------
 
   test("TC-INV-005 Remove a product from the shopping cart", async ({
     page,
