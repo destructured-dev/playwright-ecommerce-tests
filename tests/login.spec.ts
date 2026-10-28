@@ -7,9 +7,7 @@ test.describe("Logon validation", () => {
 
   test("login page displays its main controls", async ({ page }) => {
     await expect(page.getByPlaceholder("Username")).toBeVisible();
-
     await expect(page.getByPlaceholder("Password")).toBeVisible();
-
     await expect(page.getByRole("button", { name: "Login " })).toBeVisible();
   });
 
@@ -17,11 +15,8 @@ test.describe("Logon validation", () => {
     page,
   }) => {
     await page.getByPlaceholder("Username").fill("standard_user");
-
     await page.getByPlaceholder("Password").fill("secret_sauce");
-
     await page.getByRole("button", { name: "Login" }).click();
-
     await expect(page.getByText("Products", { exact: true })).toBeVisible();
   });
 
@@ -29,13 +24,9 @@ test.describe("Logon validation", () => {
     page,
   }) => {
     await page.getByPlaceholder("Username").fill("invalid_user");
-
     await page.getByPlaceholder("Password").fill("secret_sauce");
-
     await page.getByRole("button", { name: "Login" }).click();
-
     await expect(page.getByTestId("error")).toBeVisible();
-
     await expect(page.getByText("Products", { exact: true })).not.toBeVisible();
   });
 
@@ -43,13 +34,9 @@ test.describe("Logon validation", () => {
     page,
   }) => {
     await page.getByPlaceholder("Username").clear();
-
     await page.getByPlaceholder("Password").clear();
-
     await page.getByRole("button", { name: "Login" }).click();
-
     await expect(page.getByTestId("error")).toBeVisible();
-
     await expect(page.getByText("Products", { exact: true })).not.toBeVisible();
   });
 
@@ -57,13 +44,9 @@ test.describe("Logon validation", () => {
     page,
   }) => {
     await page.getByPlaceholder("Username").fill("standard_user");
-
     await page.getByPlaceholder("Password").clear();
-
     await page.getByRole("button", { name: "Login" }).click();
-
     await expect(page.getByTestId("error")).toBeVisible();
-
     await expect(page.getByText("Products", { exact: true })).not.toBeVisible();
   });
 
@@ -71,13 +54,9 @@ test.describe("Logon validation", () => {
     page,
   }) => {
     await page.getByPlaceholder("Username").clear();
-
     await page.getByPlaceholder("Password").fill("special_sauce");
-
     await page.getByRole("button", { name: "Login" }).click();
-
     await expect(page.getByTestId("error")).toBeVisible();
-
     await expect(page.getByText("Products", { exact: true })).not.toBeVisible();
   });
 });

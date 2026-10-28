@@ -117,11 +117,10 @@
 - Prices appear in ascending numerical order.
 - Sauce Labs Onesie, priced at $7.99, appears first.
 
-### Execution record
+### Automation
 
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
+- **Playwright test:** `TC-INV-004`
+- **Spec file:** `tests/inventory.spec.js`
 
 ## TC-INV-005 — Remove a product from the cart
 
