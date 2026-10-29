@@ -35,37 +35,7 @@
 
 ---
 
-## TC-INV-002 — Sort products by name ascending
-
-| Field             | Details                              |
-| ----------------- | ------------------------------------ |
-| Priority          | Medium                               |
-| Type              | Functional UI                        |
-| Automation status | Automated                            |
-| Preconditions     | User is logged in as `standard_user` |
-| Test data         | All displayed products               |
-
-### Steps
-
-1. Open the product sorting dropdown.
-2. Select `Name (A to Z)`.
-3. Read the displayed product names in order.
-4. Compare the displayed order with an alphabetically sorted list.
-
-### Expected results
-
-- The selected sorting option is `Name (A to Z)`.
-- Products appear in ascending alphabetical order.
-- Every product remains visible after sorting.
-
-### Automation
-
-- **Playwright test:** `TC-INV-002`
-- **Spec file:** `tests/inventory.spec.js`
-
----
-
-## TC-INV-003 — Add a product to the shopping cart
+## TC-INV-002 — Add a product to the shopping cart
 
 | Field             | Details                                                    |
 | ----------------- | ---------------------------------------------------------- |
@@ -90,12 +60,131 @@
 
 ### Automation
 
+- **Playwright test:** `TC-INV-002`
+- **Spec file:** `tests/inventory.spec.js`
+
+---
+
+## TC-INV-003 — Remove a product from the cart
+
+| Field             | Details                                                             |
+| ----------------- | ------------------------------------------------------------------- |
+| Priority          | Medium                                                              |
+| Type              | Functional UI                                                       |
+| Automation status | Automated                                                           |
+| Preconditions     | User is logged in as `standard_user` and one product is in the cart |
+| Test data         | All displayed products                                              |
+
+### Steps
+
+1. Locate the product that has been added to the cart.
+2. Click its `Remove from Cart` button.
+3. Verify the product button's updated state.
+4. Verify the shopping cart badge.
+
+### Expected results
+
+- The button changes from `Remove` to `Add to cart`.
+- The shopping cart badge displays no number .
+- The selected product remains visible on the inventory page.
+
+### Automation
+
 - **Playwright test:** `TC-INV-003`
 - **Spec file:** `tests/inventory.spec.js`
 
 ---
 
-## TC-INV-004 — Sort products by price ascending
+## TC-INV-004 — Open a product detail page
+
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
+
+### Steps
+
+1. Click the product heading link for the first product in the product page.
+2. Verify that the product page for the same product opens.
+3. Click the `Back to products` link.
+4. Click the product image for the same product as step 1.
+5. Verify that the product page for the same product opens.
+
+### Expected results
+
+- Clicking on either the heading or the product image will open the associated product details page.
+
+### Automation
+
+- **Playwright test:** `TC-INV-004`
+- **Spec file:** `tests/inventory.spec.js`
+
+---
+
+## TC-INV-005 — Sort products by name ascending
+
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
+
+### Steps
+
+1. Open the product sorting dropdown.
+2. Select `Name (A to Z)`.
+3. Read the displayed product names in order.
+4. Compare the displayed order with an alphabetically sorted list.
+
+### Expected results
+
+- The selected sorting option is `Name (A to Z)`.
+- Products appear in ascending alphabetical order.
+- Every product remains visible after sorting.
+
+### Automation
+
+- **Playwright test:** `TC-INV-005`
+- **Spec file:** `tests/inventory.spec.js`
+
+---
+
+## TC-INV-006 — Sort products by name descending
+
+| Field             | Details                              |
+| ----------------- | ------------------------------------ |
+| Priority          | Medium                               |
+| Type              | Functional UI                        |
+| Automation status | Automated                            |
+| Preconditions     | User is logged in as `standard_user` |
+| Test data         | All displayed products               |
+
+### Steps
+
+1. Open the product sorting dropdown.
+2. Select `Name (A to Z)`.
+3. Read the displayed product names in order.
+4. Compare the displayed order with an alphabetically sorted list.
+
+### Expected results
+
+- The selected sorting option is `Name (A to Z)`.
+- Products appear in ascending alphabetical order.
+- Every product remains visible after sorting.
+
+### Automation
+
+- **Playwright test:** `TC-INV-006`
+- **Spec file:** `tests/inventory.spec.js`
+
+---
+
+## TC-INV-007 — Sort products by price ascending
 
 | Field             | Details                              |
 | ----------------- | ------------------------------------ |
@@ -119,67 +208,12 @@
 
 ### Automation
 
-- **Playwright test:** `TC-INV-004`
+- **Playwright test:** `TC-INV-007`
 - **Spec file:** `tests/inventory.spec.js`
 
-## TC-INV-005 — Remove a product from the cart
+---
 
-| Field             | Details                                                             |
-| ----------------- | ------------------------------------------------------------------- |
-| Priority          | Medium                                                              |
-| Type              | Functional UI                                                       |
-| Automation status | Automated                                                           |
-| Preconditions     | User is logged in as `standard_user` and one product is in the cart |
-| Test data         | All displayed products                                              |
-
-### Steps
-
-1. Locate the product that has been added to the cart.
-2. Click its `Remove from Cart` button.
-3. Verify the product button's updated state.
-4. Verify the shopping cart badge.
-
-### Expected results
-
-- The button changes from `Remove` to `Add to cart`.
-- The shopping cart badge displays no number .
-- The selected product remains visible on the inventory page.
-
-### Execution record
-
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
-
-## TC-INV-006 — Open a product detail page
-
-| Field             | Details                              |
-| ----------------- | ------------------------------------ |
-| Priority          | Medium                               |
-| Type              | Functional UI                        |
-| Automation status | Automated                            |
-| Preconditions     | User is logged in as `standard_user` |
-| Test data         | All displayed products               |
-
-### Steps
-
-1. Click the product heading link for the first product in the product page.
-2. Verify that the product page for the same product opens.
-3. Click the `Back to products` link.
-4. Click the product image for the same product as step 1.
-5. Verify that the product page for the same product opens.
-
-### Expected results
-
-- Clicking on either the heading or the product image will open the associated product details page.
-
-### Execution record
-
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
-
-## TC-INV-007 — Sort products by names Z to A
+## TC-INV-008 — Sort products by price descending
 
 | Field             | Details                              |
 | ----------------- | ------------------------------------ |
@@ -192,48 +226,21 @@
 ### Steps
 
 1. Open the product sorting dropdown.
-2. Select `Names Z to A`.
-3. Review the order of products in the displayed product list.
+2. Select `Price (low to high)`.
+3. Review the prices in the displayed product list.
 
 ### Expected results
 
-- The selected sorting option is Names (Z to A).
-- Products appear in reverse alphabetical order.
-- Test.allTheThings() T-Shirt (Red) appears first.
+- The selected sorting option is `Price (low to high)`.
+- Prices appear in ascending numerical order.
+- Sauce Labs Onesie, priced at $7.99, appears first.
 
-### Execution record
+### Automation
 
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
+- **Playwright test:** `TC-INV-008`
+- **Spec file:** `tests/inventory.spec.js`
 
-## TC-INV-008 — Sort prices high to low
-
-| Field             | Details                              |
-| ----------------- | ------------------------------------ |
-| Priority          | Medium                               |
-| Type              | Functional UI                        |
-| Automation status | Automated                            |
-| Preconditions     | User is logged in as `standard_user` |
-| Test data         | All displayed products               |
-
-### Steps
-
-1. Open the product sorting drop down.
-2. Select `Prices (High to low).
-3. Review the order of products in the displayed product list.
-
-### Expected results
-
-- The selected option is Prices (High to low).
-- Products appear in order from highest price to lowest priced.
-- Sauce Labs Fleec Jacket appears first.
-
-### Execution record
-
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
+---
 
 ## TC-INV-009 — Add multiple products
 
@@ -262,13 +269,12 @@
 - The shopping cart badge displays `2`.
 - The selected products remains visible on the inventory page.
 
-### Execution record
+### Automation
 
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
+- **Playwright test:** `TC-INV-009`
+- **Spec file:** `tests/inventory.spec.js`
 
--
+---
 
 ## TC-INV-010 — Add and remove different products
 
@@ -294,11 +300,10 @@
 - The `Add to cart` button of products changes to `Remove`.
 - The `Remove` button of products changes to `Add to cart`.
 
-### Execution record
+### Automation
 
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
+- **Playwright test:** `TC-INV-010`
+- **Spec file:** `tests/inventory.spec.js`
 
 ## TC-INV-011 — Open the shopping cart
 
@@ -319,11 +324,10 @@
 
 - The shopping cart page becomes visible.
 
-### Execution record
+### Automation
 
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
+- **Playwright test:** `TC-INV-011`
+- **Spec file:** `tests/inventory.spec.js`
 
 ## TC-INV-012 — Return from product details
 
@@ -346,11 +350,10 @@
 
 - Clicking the `Back to products` link will return the user to the product listing page.
 
-### Execution record
+### Automation
 
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
+- **Playwright test:** `TC-INV-012`
+- **Spec file:** `tests/inventory.spec.js`
 
 ## TC-INV-013 — Open and close the navigation menu
 
@@ -374,11 +377,10 @@
 - Clicking the `Hamburger` icon will open the navigation menu.
 - Clicking `X` icon will close the navigation menu.
 
-### Execution record
+### Automation
 
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
+- **Playwright test:** `TC-INV-013`
+- **Spec file:** `tests/inventory.spec.js`
 
 ## TC-INV-014 — Selecting Logout returns the user to the login page.
 
@@ -403,11 +405,10 @@
 - Clicking the `Logout` button will log the user out.
 - The user will not be able to navigate back to the previous page.
 
-### Execution record
+### Automation
 
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
+- **Playwright test:** `TC-INV-014`
+- **Spec file:** `tests/inventory.spec.js`
 
 -
 
@@ -429,11 +430,10 @@
 
 - Each product listing should have a visible image.
 
-### Execution record
+### Automation
 
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
+- **Playwright test:** `TC-INV-015`
+- **Spec file:** `tests/inventory.spec.js`
 
 - Product cards are consistently structured
 
@@ -467,11 +467,10 @@
   - An `Add to cart` button
 - The layout of each of the items of each product should be consistent.
 
-### Execution record
+### Automation
 
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
+- **Playwright test:** `TC-INV-016`
+- **Spec file:** `tests/inventory.spec.js`
 
 ## TC-INV-017 — Prices use the correct format
 
@@ -496,11 +495,10 @@
 
 - All prices are in the correct format.
 
-### Execution record
+### Automation
 
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
+- **Playwright test:** `TC-INV-017`
+- **Spec file:** `tests/inventory.spec.js`
 
 ## TC-INV-018 — Product page layout is correct for viewport
 
@@ -523,11 +521,10 @@
 - All controls are visible.
 - No parts of the products is uncentred or not visible when the viewport size is changed.
 
-### Execution record
+### Automation
 
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
+- **Playwright test:** `TC-INV-018`
+- **Spec file:** `tests/inventory.spec.js`
 
 ## TC-INV-019 — UI can be used via keyboard
 
@@ -549,11 +546,10 @@
 
 - All UI elements should be selectable and clickable via keyboard keys.
 
-### Execution record
+### Automation
 
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
+- **Playwright test:** `TC-INV-019`
+- **Spec file:** `tests/inventory.spec.js`
 
 - Refreshing the inventory page does not cause unexpected errors or inconsistent cart state.
 
@@ -580,8 +576,7 @@
 
 - The product inventory page will reload in the same state when refreshed.
 
-### Execution record
+### Automation
 
-- **Last executed:** Not yet executed
-- **Result:** Not run
-- **Defect reference:** None
+- **Playwright test:** `TC-INV-020`
+- **Spec file:** `tests/inventory.spec.js`
