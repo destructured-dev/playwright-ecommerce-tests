@@ -34,6 +34,55 @@ test.describe("Logon validation", () => {
     }
   });
 
+  test("TC-INV-003 Add a product to the shopping cart", async ({ page }) => {
+    // Add the backpack to the cart
+    await page.getByTestId("add-to-cart-sauce-labs-backpack").click();
+
+    // Check that the cart icon shows 1 product
+    await expect(page.getByTestId("shopping-cart-badge")).toContainText("1");
+
+    // Check that the backpack product is still visible
+
+    await expect(
+      page
+        .getByTestId("inventory-item-name")
+        .filter({ hasText: "Sauce Labs Backpack" }),
+    ).toBeVisible();
+  });
+
+  test("TC-INV-005 Remove a product from the shopping cart", async ({
+    page,
+  }) => {
+    // Add the backpack to the cart
+    await page.getByTestId("add-to-cart-sauce-labs-backpack").click();
+
+    // Check that the cart icon shows 1 product
+    await expect(page.getByTestId("shopping-cart-badge")).toContainText("1");
+
+    // Remove the backpack from the cart
+    await page.getByTestId("remove-sauce-labs-backpack").click();
+
+    // Check that the cart icon shows 0 products
+    await expect(page.getByTestId("shopping-cart-badge")).not.toBeVisible();
+  });
+
+  test("TC-INV-006 Open a product detail page", async ({ page }) => {
+    // check that all items have loaded (webkit bug)
+    const names = page.getByTestId("inventory-item-name");
+    await expect(names).toHaveCount(6);
+
+    // Click on the backpack product name to open the product detail page
+    await page
+      .getByTestId("inventory-item-name")
+      .filter({ hasText: "Sauce Labs Backpack" })
+      .click();
+
+    // Check that the product detail page is displayed
+    await expect(page.getByTestId("inventory-item-name")).toContainText(
+      "Sauce Labs Backpack",
+    );
+  });
+
   test("TC-INV-002 Sort products by name ascending", async ({ page }) => {
     // Choose the 'Names (Z to A) option in the sort dropdown
     await page
@@ -68,29 +117,11 @@ test.describe("Logon validation", () => {
       await expect(buttonElement).toBeVisible();
     }
   });
-
-  test("TC-INV-003 Add a product to the shopping cart", async ({ page }) => {
-    // Add the backpack to the cart
-    await page.getByTestId("add-to-cart-sauce-labs-backpack").click();
-
-    // Check that the cart icon shows 1 product
-    await expect(page.getByTestId("shopping-cart-badge")).toContainText("1");
-
-    // Check that the backpack product is still visible
-
-    await expect(
-      page
-        .getByTestId("inventory-item-name")
-        .filter({ hasText: "Sauce Labs Backpack" }),
-    ).toBeVisible();
-  });
-
-  //------------------------------------------------------------
-  // TODO
-  // This fails in webkit - unsorted prices is creating an empty array
-  //------------------------------------------------------------
-
   test("TC-INV-004 Sort products by price ascending", async ({ page }) => {
+    // check that all items are loaded before sorting (WebKit bug)
+    const prices = page.getByTestId("inventory-item-price");
+    await expect(prices).toHaveCount(6);
+
     // get the prices of inventory items before sorting
     const unsortedPrices = await page
       .getByTestId("inventory-item-price")
@@ -113,8 +144,6 @@ test.describe("Logon validation", () => {
       return priceA - priceB;
     });
 
-    console.log(unsortedPrices);
-    console.log(inventoryNames);
     // Check if the arrays are equal
     expect(unsortedPrices).toEqual(inventoryNames);
 
@@ -133,34 +162,5 @@ test.describe("Logon validation", () => {
       await expect(priceElement).toBeVisible();
       await expect(buttonElement).toBeVisible();
     }
-  });
-
-  test("TC-INV-005 Remove a product from the shopping cart", async ({
-    page,
-  }) => {
-    // Add the backpack to the cart
-    await page.getByTestId("add-to-cart-sauce-labs-backpack").click();
-
-    // Check that the cart icon shows 1 product
-    await expect(page.getByTestId("shopping-cart-badge")).toContainText("1");
-
-    // Remove the backpack from the cart
-    await page.getByTestId("remove-sauce-labs-backpack").click();
-
-    // Check that the cart icon shows 0 products
-    await expect(page.getByTestId("shopping-cart-badge")).not.toBeVisible();
-  });
-
-  test("TC-INV-006 Open a product detail page", async ({ page }) => {
-    // Click on the backpack product name to open the product detail page
-    await page
-      .getByTestId("inventory-item-name")
-      .filter({ hasText: "Sauce Labs Backpack" })
-      .click();
-
-    // Check that the product detail page is displayed
-    await expect(page.getByTestId("inventory-item-name")).toContainText(
-      "Sauce Labs Backpack",
-    );
   });
 });
